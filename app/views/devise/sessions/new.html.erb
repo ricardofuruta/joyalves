@@ -1,0 +1,42 @@
+
+
+<div class="container sign_in">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel2 panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Faça o Login</h3>
+        </div>
+        <div class="panel-body">
+          <form accept-charset="UTF-8" role="form">
+            <fieldset>
+              <%= simple_form_for(resource,defaults: { input_html: { class: 'form-control' } }, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="form-inputs">
+                  <div class="form-group">
+                    <%= f.input :email, required: false, autofocus: true %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.input :password, required: false %>
+                  </div>
+                </div>
+                <div class="checkbox">
+                  <label>
+                   <%= f.input :remember_me,label:'Lembre-me', input_html: { class: 'checkbox' }, as: :boolean if devise_mapping.rememberable? %>
+                  </label>
+                </div>
+
+                <div class="form-actions">
+                  <%= f.button :submit, "Log in", class:"btn btn-lg btn-success btn-block" %>
+                </div>
+              <% end %>
+            </fieldset>
+          </form>
+          <hr/>
+          <center><h4>OR</h4></center>
+          <input class="btn btn-lg btn-facebook btn-block" type="submit" value="Login via facebook">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
