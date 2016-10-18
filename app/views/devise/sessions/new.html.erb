@@ -33,7 +33,8 @@
           </form>
           <hr/>
           <center><h4>OR</h4></center>
-          <input class="btn btn-lg btn-facebook btn-block" type="submit" value="Login via facebook">
+ <!--          <input class="btn btn-lg btn-facebook btn-block" type="submit" value="Login com facebook" url=user_facebook_omniauth_authorize_path> -->
+          <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class:"btn btn-lg btn-facebook btn-block" %>
           <%= render "devise/shared/links" %>
         </div>
       </div>
