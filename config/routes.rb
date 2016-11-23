@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Attachinary::Engine => "/attachinary"
   get 'categories/index'
 
   ActiveAdmin.routes(self)
