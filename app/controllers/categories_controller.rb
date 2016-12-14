@@ -1,29 +1,29 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
-  # GET /categorys
-  # GET /categorys.json
+  # GET /categories
+  # GET /categories.json
 
   def index
-    @categorys = Category.all
+    @categories = Category.all
   end
 
-  # GET /categorys/1
-  # GET /categorys/1.json
+  # GET /categories/1
+  # GET /categories/1.json
   def show
   end
 
-  # GET /categorys/new
+  # GET /categories/new
   def new
     @category = Category.new
   end
 
-  # GET /categorys/1/edit
+  # GET /categories/1/edit
   def edit
   end
 
-  # POST /categorys
-  # POST /categorys.json
+  # POST /categories
+  # POST /categories.json
   def create
     @category = Category.new(category_params)
 
@@ -38,8 +38,8 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /categorys/1
-  # PATCH/PUT /categorys/1.json
+  # PATCH/PUT /categories/1
+  # PATCH/PUT /categories/1.json
   def update
     respond_to do |format|
       if @category.update(category_params)
@@ -52,8 +52,8 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # DELETE /categorys/1
-  # DELETE /categorys/1.json
+  # DELETE /categories/1
+  # DELETE /categories/1.json
   def destroy
     @category.destroy
     respond_to do |format|
@@ -70,6 +70,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name, :description, :photo, :photo_cache)
     end
 end
