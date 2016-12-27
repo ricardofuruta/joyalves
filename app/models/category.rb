@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
-  has_many :products
   mount_uploader :photo, PhotoUploader
+  has_many :products, dependent: :destroy
 end

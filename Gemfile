@@ -19,7 +19,7 @@ gem 'omniauth-facebook'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'money-rails'
-gem 'cloudinary', '1.1.0'
+gem 'cloudinary', '1.3.0'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 group :development, :test do
