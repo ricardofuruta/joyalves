@@ -5,8 +5,9 @@ class ProductsController < ApplicationController
   # GET /products.json
 
   def index
-    @products = Product.all
     @category = Category.find(params[:category_id])
+    @products = @category.products
+    @photos = ProductPhoto.all
   end
 
   # GET /products/1
